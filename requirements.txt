@@ -1,5 +1,6 @@
 # This file is here to pre-install dependencies inside the mybinder environment.
 # Please do not remove it.
+pip3 install --no-cache-dir --upgrade -r requirements.txt
 pandas==1.1.2
 pyjwt==1.7.1
 sklearn==0.0
