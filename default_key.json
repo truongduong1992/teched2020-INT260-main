@@ -1,0 +1,26 @@
+{
+  "url": "https://aiservices-trial-dar.cfapps.us10.hana.ondemand.com",
+  "uaa": {
+    "tenantmode": "dedicated",
+    "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+    "subaccountid": "d8cbb3fe-7e3e-4f6d-b6f6-7afed27e6305",
+    "credential-type": "binding-secret",
+    "clientid": "sb-63709d00-a844-4eb2-a073-4fc133f36820!b228669|dar-std-trial!b40577",
+    "xsappname": "63709d00-a844-4eb2-a073-4fc133f36820!b228669|dar-std-trial!b40577",
+    "clientsecret": "7f646f62-7d9b-48be-8572-87a89b6eb0d1$6fMrrCvmppkuI5-rrqWmJunWrPh11jdpmFuqCnr29Ag=",
+    "serviceInstanceId": "63709d00-a844-4eb2-a073-4fc133f36820",
+    "url": "https://trial-2-6kf4ld1x.authentication.us10.hana.ondemand.com",
+    "uaadomain": "authentication.us10.hana.ondemand.com",
+    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtfJIKnu3BU9T8vT5oyNd\nioIng+mlURLDx8fPEt6nm4y66OguJBUqIcaiphH/QWwfaMqDouaj2rxEvrqTGZlE\ngfKz6h7txqXVEFLhZ+6wdjoYBbbvJ4VQH18Xmfs00Zqo+oXUsR9z4Yx/YwtpualL\nWHpofAsKZkAzVAWSf7QKGO6u5MNDQYDNgAyWJXFmMxP3vKQKRBDhi7vwkOV2IHjQ\n929M2hHgPtFmsFaZeRtA9t/FWsivfBA/7zG1Nx3c25hHtT+ILL5Q5L4KKUcHMnWL\nENgiygEbISlndHseMAUSoWaCMO3LEWXvNn7mwB4C2BK6J6SrPGcsPsejEFIWSAeM\nJwIDAQAB\n-----END PUBLIC KEY-----",
+    "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+    "identityzone": "trial-2-6kf4ld1x",
+    "identityzoneid": "d8cbb3fe-7e3e-4f6d-b6f6-7afed27e6305",
+    "tenantid": "d8cbb3fe-7e3e-4f6d-b6f6-7afed27e6305",
+    "zoneid": "d8cbb3fe-7e3e-4f6d-b6f6-7afed27e6305"
+  },
+  "swagger": {
+    "dm": "https://aiservices-trial-dar.cfapps.us10.hana.ondemand.com/data-manager/doc/ui",
+    "mm": "https://aiservices-trial-dar.cfapps.us10.hana.ondemand.com/model-manager/doc/ui",
+    "inference": "https://aiservices-trial-dar.cfapps.us10.hana.ondemand.com/inference/doc/ui"
+  }
+}
