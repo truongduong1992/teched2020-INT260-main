@@ -212,9 +212,9 @@ def cleanup_session():
      data_manager.delete_dataset_schema_by_id(dataset_schema_id)
      print("DONE cleaning up!")
 
- if CLEANUP_SESSION:
-     print("Cleaning up resources generated in this session.")
-     cleanup_session()
- else:
-     print("Not cleaning up. Set 'CLEANUP_SESSION = True' above and run again!")
+if CLEANUP_SESSION:
+    print("Cleaning up resources generated in this session.")
+    cleanup_session()
+else:
+    print("Not cleaning up. Set 'CLEANUP_SESSION = True' above and run again!")
     
