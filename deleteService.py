@@ -1,3 +1,17 @@
+import json
+import os
+
+if not os.path.exists("key.json"):
+    msg = "key.json is not found. Please follow instructions above to create a service key of"
+    msg += " Data Attribute Recommendation. Then, upload it into the same directory where"
+    msg += " this notebook is saved."
+    print(msg)
+    raise ValueError(msg)
+
+with open("key.json") as file_handle:
+    key = file_handle.read()
+    SERVICE_KEY = json.loads(key)
+
 CLEANUP_EVERYTHING = False
 
 def cleanup_everything():
