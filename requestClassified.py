@@ -115,4 +115,49 @@ video_games = df[df['level1_category'] == 'Video Games']
 print(video_games)
 print(df.loc[0])
 video_games.loc[df['level2_category'].isna() & df['level3_category'].isna()].head(5)
+video_game_json = [
+     {
+        "objectId": "optional-identifier-1",
+        "features": [
+           {"name": "manufacturer", "value": "THQ"},
+            {"name": "description", "value": "Harness the power of Air and Fire as you join"},
+            {"name": "price", "value":  "19.99"},
+        ],
+    },
+         {
+        "objectId": "optional-identifier-2",
+        "features": [
+           {"name": "manufacturer", "value": "City Interactive"},
+            {"name": "description", "value": "Control the power of death as you ghost through the jungle"},
+            {"name": "price", "value":  "19.99"},
+        ],
+    },
+         {
+        "objectId": "optional-identifier-3",
+        "features": [
+           {"name": "manufacturer", "value": "Nintendo"},
+            {"name": "description", "value": "hoose your fate as you journey through a fasc"},
+            {"name": "price", "value":  "9.99"},
+        ],
+    },
+         {
+        "objectId": "optional-identifier-4",
+        "features": [
+           {"name": "manufacturer", "value": "Microsoft"},
+            {"name": "description", "value": "Stop a grave threat from destroying all of civ"},
+            {"name": "price", "value":  "4.9"},
+        ],
+    },
+         {
+        "objectId": "optional-identifier-5",
+        "features": [
+           {"name": "manufacturer", "value": "Rockstar Games"},
+            {"name": "description", "value": "Gun your engine and tear through the streets o"},
+            {"name": "price", "value":  "9.99"},
+        ],
+    },
 
+]
+print("==========================================================")
+inference_response = inference.create_inference_request(model_name, video_game_json, top_n=3)
+pprint(inference_response)
