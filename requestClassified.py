@@ -6,6 +6,10 @@ from pprint import pprint # for nicer output formatting
 from sap.aibus.dar.client.model_manager_client import ModelManagerClient
 from sap.aibus.dar.client.exceptions import DARHTTPException
 from sap.aibus.dar.client.inference_client import InferenceClient
+import pandas as pd
+
+df = pd.read_csv("bestBuy.csv")
+df.head(5)
 
 model_name = "bestbuy-hierarchy-model"
 
@@ -108,5 +112,7 @@ print()
 pprint(inference_response)
 # Inspect all video games with just a top-level category entry
 video_games = df[df['level1_category'] == 'Video Games']
+print(video_games)
+print(df.loc[0])
 video_games.loc[df['level2_category'].isna() & df['level3_category'].isna()].head(5)
 
