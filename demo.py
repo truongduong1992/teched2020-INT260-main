@@ -8,7 +8,7 @@ from sap.aibus.dar.client.inference_client import InferenceClient
 
 
 if not os.path.exists("default_key.json"):
-    msg = "key.json is not found. Please follow instructions above to create a service key of"
+    msg = "default_key.json is not found. Please follow instructions above to create a service key of"
     msg += " Data Attribute Recommendation. Then, upload it into the same directory where"
     msg += " this notebook is saved."
     print(msg)
@@ -58,6 +58,8 @@ print(f"Dataset ID: {dataset_id}")
 
 # Open in binary mode.
 with open('bestBuy.csv.gz', 'rb') as file_handle:
+    print("dataset_id",dataset_id)
+    print("file_handle:",file_handle)
     dataset_resource = data_manager.upload_data_to_dataset(dataset_id, file_handle)
 
 print()
@@ -119,83 +121,6 @@ print("Finished deployment resource:")
 print()
 
 pprint(deployment_resource)
-
-##Executing Inference requests
-inference = InferenceClient.construct_from_service_key(SERVICE_KEY)
-
-objects_to_be_classified = [
-    {
-        "features": [
-            {"name": "manufacturer", "value": "Energizer"},
-            {"name": "description", "value": "Alkaline batteries; 1.5V"},
-            {"name": "price", "value":  "5.99"},
-        ],
-    },
-]
-
-inference_response = inference.create_inference_request(model_name, objects_to_be_classified)
-
-print()
-print("Inference request processed. Response:")
-print()
-pprint(inference_response)
-my_own_items = [
-    {
-        "features": [
-            {"name": "manufacturer", "value": "EDIT THIS"},
-            {"name": "description", "value": "EDIT THIS"},
-            {"name": "price", "value":  "0.00"},
-        ],
-    },
-]
-
-inference_response = inference.create_inference_request(model_name, my_own_items)
-
-print()
-print("Inference request processed. Response:")
-print()
-pprint(inference_response)
-objects_to_be_classified = [
-    {
-        "objectId": "optional-identifier-1",
-        "features": [
-            {"name": "manufacturer", "value": "Energizer"},
-            {"name": "description", "value": "Alkaline batteries; 1.5V"},
-            {"name": "price", "value":  "5.99"},
-        ],
-    },
-    {
-        "objectId": "optional-identifier-2",
-        "features": [
-            {"name": "manufacturer", "value": "Eidos"},
-            {"name": "description", "value": "Unravel a grim conspiracy at the brink of Revolution"},
-            {"name": "price", "value":  "19.99"},
-        ],
-    },
-    {
-        "objectId": "optional-identifier-3",
-        "features": [
-            {"name": "manufacturer", "value": "Cadac"},
-            {"name": "description", "value": "CADAC Grill Plate for Safari Chef Grills: 12\""
-                                             + "cooking surface; designed for use with Safari Chef grills;"
-                                             + "105 sq. in. cooking surface; PTFE nonstick coating;"
-                                             + " 2 grill surfaces"
-            },
-            {"name": "price", "value":  "39.99"},
-        ],
-    }
-]
-
-
-inference_response = inference.create_inference_request(model_name, objects_to_be_classified, top_n=3)
-
-print()
-print("Inference request processed. Response:")
-print()
-pprint(inference_response)
-# Inspect all video games with just a top-level category entry
-video_games = df[df['level1_category'] == 'Video Games']
-video_games.loc[df['level2_category'].isna() & df['level3_category'].isna()].head(5)
 
 
 ##Cleanup
